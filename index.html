@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+
+<head>
+    <!-- Configuración básica -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Título del sitio -->
+    <title>Eventossalypimienta</title>
+
+    <!-- Links Boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="Css/styles.css">
+</head>
+
+<body>
+
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-img" src="" alt="">
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand d-flex align-items-center" href="#inicio">
+                    <img src="Assets/icons/logo_salypimienta.png" alt="Logo" class="logo">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#inicio">INICIO</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#nosotros">NOSOTROS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#servicios">SERVICIOS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#galeria">NOTICIAS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">CONTACTO</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <!-- Cuerpo -->
+    <main>
+        <section id="inicio">
+            <div class="hero-slide">
+                <div class="hero-content-wrapper">
+                    <h1 class="hero-title">COTIZA TU PRÓXIMO SERVICIO</h1>
+
+                    <div class="hero-logo-center">
+                        <img src="Assets/icons/logo_salypimienta.png" alt="Eventossalypimienta">
+                    </div>
+
+                    <div class="hero-action">
+                        <a href="#" target="_blank" class="btn-cotizar-custom">
+                            COTIZAR
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCION NOSOTROS -->
+        <section class="nosotros-section" id="nosotros">
+            <div class="container">
+
+                <div class="row align-items-center g-5 mb-5">
+
+                    <!-- Imagen -->
+                    <div class="col-lg-6">
+                        <div class="about-img-wrapper">
+                            <img src="Assets/img/logo_imagen.png" class="img-fluid" alt="Sal y Pimienta Eventos">
+                        </div>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="col-lg-6">
+
+                        <span class="section-tag fw-semibold">Quiénes somos</span>
+
+                        <h2 class="fw-bold display-6 mt-2">
+                            Expertos en crear experiencias y eventos de alto nivel
+                        </h2>
+
+                        <p class="section-text mt-3">
+                            En Sal y Pimienta diseñamos y producimos eventos con un enfoque integral en el servicio y la
+                            gastronomía. Acompañamos a nuestros clientes desde celebraciones privadas hasta eventos
+                            corporativos,
+                            cuidando cada detalle para garantizar una experiencia impecable.
+                        </p>
+
+                        <ul class="about-features mt-4">
+                            <li>Producción integral de eventos</li>
+                            <li>Gastronomía premium y asados de alto estándar</li>
+                            <li>Planificación, montaje y coordinación profesional</li>
+                        </ul>
+
+                        <p class="brand-quote mt-4">
+                            “No organizamos eventos. Creamos experiencias que se recuerdan.”
+                        </p>
+
+                        <div class="row mt-4 stats-row">
+                            <div class="col-6">
+                                <h3 class="stat-number mb-0">20+</h3>
+                                <small class="stat-label">Años de experiencia</small>
+                            </div>
+
+                            <div class="col-6">
+                                <h3 class="stat-number mb-0">10.000+</h3>
+                                <small class="stat-label">Servicios realizados</small>
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <small class="text-muted d-block mb-2">
+                                Conoce más de nuestro trabajo
+                            </small>
+
+                            <div class="d-flex gap-3">
+                                <a href="#" class="social-link" aria-label="Instagram">
+                                    <i class="bi bi-instagram"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="Facebook">
+                                    <i class="bi bi-facebook"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="WhatsApp">
+                                    <i class="bi bi-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCION SERVICIOS -->
+        <section class="services-parallax" id="servicios">
+
+            <!-- Overlay oscuro + contenido -->
+            <div class="services-overlay">
+
+                <section class="services-section">
+                    <div class="container">
+
+                        <div class="text-center mb-5">
+                            <span class="section-tag fw-semibold">Nuestros servicios</span>
+                            <h2 class="fw-bold display-6 mt-2">
+                                Soluciones completas para tu evento
+                            </h2>
+                            <p class="section-text mt-3 mx-auto" style="max-width: 720px;">
+                                Diseñamos y ejecutamos eventos cuidando cada detalle, combinando producción,
+                                gastronomía y experiencia para lograr resultados memorables.
+                            </p>
+                        </div>
+
+                        <!-- Servicios -->
+                        <div class="row g-4">
+
+                            <div class="col-md-6 col-lg-4">
+                                <div class="service-card h-100">
+                                    <div class="service-icon">
+                                        <i class="bi bi-stars"></i>
+                                    </div>
+                                    <h5 class="service-title">Producción de eventos</h5>
+                                    <p class="service-text">
+                                        Planificación, coordinación y ejecución profesional para eventos sociales y
+                                        corporativos.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4">
+                                <div class="service-card h-100">
+                                    <div class="service-icon">
+                                        <i class="bi bi-cup-hot"></i>
+                                    </div>
+                                    <h5 class="service-title">Servicios gastronómicos</h5>
+                                    <p class="service-text">
+                                        Propuestas culinarias adaptadas a cada tipo de evento, con alto estándar de
+                                        calidad.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4">
+                                <div class="service-card h-100">
+                                    <div class="service-icon">
+                                        <i class="bi bi-fire"></i>
+                                    </div>
+                                    <h5 class="service-title">Asados premium</h5>
+                                    <p class="service-text">
+                                        Asados de alto nivel, cuidando técnica, presentación y experiencia para tus
+                                        invitados.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-6">
+                                <div class="service-card h-100">
+                                    <div class="service-icon">
+                                        <i class="bi bi-briefcase"></i>
+                                    </div>
+                                    <h5 class="service-title">Eventos corporativos</h5>
+                                    <p class="service-text">
+                                        Servicios profesionales para empresas, lanzamientos, celebraciones y eventos
+                                        internos.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-6">
+                                <div class="service-card h-100">
+                                    <div class="service-icon">
+                                        <i class="bi bi-balloon"></i>
+                                    </div>
+                                    <h5 class="service-title">Celebraciones privadas</h5>
+                                    <p class="service-text">
+                                        Cumpleaños, matrimonios y celebraciones diseñadas a medida, sin improvisaciones.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="text-center mt-5">
+                            <a href="#contacto" class="btn btn-primary btn-lg">
+                                Cotizar mi evento
+                            </a>
+                        </div>
+
+                    </div>
+                </section>
+
+            </div>
+        </section>
+
+        <!-- SECCION GALERIA -->
+
+        <section class="gallery-section" id="galeria">
+
+            <!-- Encabezado -->
+            <div class="container mb-5 text-center">
+                <span class="section-tag fw-semibold">Galería</span>
+                <h2 class="fw-bold display-6 mt-2">
+                    Eventos que hablan por nosotros
+                </h2>
+                <p class="section-text mt-3 mx-auto" style="max-width: 720px;">
+                    Algunos de los momentos y experiencias que hemos creado junto a nuestros clientes.
+                </p>
+            </div>
+
+            <!-- Carrusel -->
+            <div class="container-fluid px-0">
+                <div class="gallery-wrapper">
+
+                    <div class="swiper gallery-swiper">
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide gallery-item">
+                                <img src="Assets/img/fondo_vasos.png" alt="Evento Sal y Pimienta" loading="lazy">
+                            </div>
+
+                            <div class="swiper-slide gallery-item">
+                                <img src="Assets/img/montaje.png" alt="Evento Sal y Pimienta" loading="lazy">
+                            </div>
+
+                            <div class="swiper-slide gallery-item">
+                                <img src="Assets/img/montaje_claro.png" alt="Evento Sal y Pimienta" loading="lazy">
+                            </div>
+
+                            <div class="swiper-slide gallery-item">
+                                <img src="Assets/img/fondo_vasos.png" alt="Evento Sal y Pimienta" loading="lazy">
+                            </div>
+
+                            <div class="swiper-slide gallery-item">
+                                <img src="Assets/img/montaje.png" alt="Evento Sal y Pimienta" loading="lazy">
+                            </div>
+
+                            <div class="swiper-slide gallery-item">
+                                <img src="Assets/img/montaje_claro.png" alt="Evento Sal y Pimienta" loading="lazy">
+                            </div>
+
+                            <div class="swiper-slide gallery-item">
+                                <img src="Assets/img/montaje.png" alt="Evento Sal y Pimienta" loading="lazy">
+                            </div>
+
+                            <div class="swiper-slide gallery-item">
+                                <img src="Assets/img/montaje_claro.png" alt="Evento Sal y Pimienta" loading="lazy">
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container-fluid">
+            <div class="footer-inner mx-auto">
+
+                <div class="row justify-content-between text-center text-lg-start">
+
+                    <div class="col-lg-3 mb-4 mb-lg-0">
+                        <a href="#inicio" class="d-inline-block">
+                            <img src="Assets/icons/logo_salypimienta.png" alt="Salypimienta" class="footer-logo mb-3">
+                        </a>
+                    </div>
+
+                    <!-- REDES -->
+                    <div class="col-lg-3 mb-4 mb-lg-0">
+                        <h6 class="footer-title">Síguenos</h6>
+                        <div class="d-flex gap-3 mt-3 justify-content-center justify-content-lg-start">
+                            <a href="#" class="social-icon" aria-label="Facebook">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="Instagram">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="WhatsApp">
+                                <i class="bi bi-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- NAVEGACIÓN -->
+                    <div class="col-lg-3 mb-4 mb-lg-0">
+                        <h6 class="footer-title">Navegación</h6>
+                        <ul class="footer-links mt-3">
+                            <li><a href="#inicio">Inicio</a></li>
+                            <li><a href="#nosotros">Nosotros</a></li>
+                            <li><a href="#servicios">Servicios</a></li>
+                            <li><a href="#galeria">Noticias</a></li>
+                            <li><a href="#">Contacto</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- CONTACTO -->
+                    <div class="col-lg-3">
+                        <h6 class="footer-title">Contacto</h6>
+                        <ul class="footer-contact mt-3">
+                            <li><i class="bi bi-telephone"></i> +56 9 9999 9999</li>
+                            <li><i class="bi bi-envelope"></i> gmail@gmail.com</li>
+                            <li><i class="bi bi-geo-alt"></i> Santiago, Chile</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- FOOTER BOTTOM -->
+            <div class="footer-bottom text-center mt-5 pt-4">
+                <small>© 2026 Eventossalypimienta · Todos los derechos reservados</small>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Link Js Boostrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- JavaScript -->
+    <script src="Js/script.js"></script>
+</body>
+
+</html>
