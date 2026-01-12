@@ -1,3 +1,9 @@
+
+/* =========================
+       MENSAJE CONSOLA 
+    ========================= */
+
+
 // Espera a que el HTML esté completamente cargado
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -17,31 +23,51 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// Código para el efecto de encogimiento de la barra de navegación al hacer scroll.
-window.addEventListener('DOMContentLoaded', event => {
 
-    // Función para encoger la barra de navegación
-    var navbarShrink = function () {
-        // Selector: Usamos la clase 'navbar-custom' que tienes en tu HTML
-        const navbarCollapsible = document.body.querySelector('.navbar-custom');
 
-        if (!navbarCollapsible) {
-            return;
-        }
+/* =========================
+      NAV BAR
+   ========================= */
 
-        // Comprueba si el desplazamiento vertical es 0 (estás arriba del todo)
+
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.querySelector('.navbar-custom');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+
+    /* ============================
+       MENÚ RESPONSIVE
+    ============================ */
+
+    navbarCollapse.addEventListener('show.bs.collapse', () => {
+        navbar.classList.add('menu-abierto');
+    });
+
+    navbarCollapse.addEventListener('hide.bs.collapse', () => {
+        navbar.classList.remove('menu-abierto');
+    });
+
+    /* ============================
+       SHRINK POR SCROLL
+    ============================ */
+
+    const navbarShrink = () => {
         if (window.scrollY === 0) {
-            navbarCollapsible.classList.remove('navbar-shrink');
+            navbar.classList.remove('navbar-shrink');
         } else {
-            // Si has hecho scroll, añade la clase
-            navbarCollapsible.classList.add('navbar-shrink');
+            navbar.classList.add('navbar-shrink');
         }
     };
 
-    // Llama a la función una vez al cargar (en caso de refrescar la página no en el tope)
-    navbarShrink();
+    // Forzar estado correcto al cargar
+    window.addEventListener('load', () => {
+        window.scrollTo(0, 0);
+        navbarShrink();
+    });
 
-    // Llama a la función cada vez que se desplaza la página
     document.addEventListener('scroll', navbarShrink);
 });
 
@@ -117,3 +143,52 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
+/* =========================
+    MENSAJE FORMULARIO
+ ========================= */
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("contactForm");
+    const successMsg = document.getElementById("formSuccess");
+
+    if (!form) return;
+
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        try {
+            const formData = new FormData(form);
+
+            const response = await fetch(form.action, {
+                method: "POST",
+                body: formData,
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+
+            if (response.ok) {
+                form.reset(); // Limpia los campos
+                if (successMsg) {
+                    successMsg.classList.add("show");
+                }
+            } else {
+                console.error("Error Formspree:", response.status);
+                alert("No se pudo enviar el mensaje. Intenta nuevamente.");
+            }
+
+        } catch (error) {
+            console.error("Error de red:", error);
+            alert("Error de conexión. Revisa tu internet.");
+        }
+    });
+});
+
+
+const navbar = document.querySelector('.navbar-custom');
+const toggler = document.querySelector('.navbar-toggler');
+
+toggler.addEventListener('click', () => {
+    navbar.classList.toggle('menu-open');
+});

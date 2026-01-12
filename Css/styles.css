@@ -7,6 +7,11 @@
     --color-muted: #CFCFCF;
 }
 
+html,
+body {
+    overflow-x: hidden;
+}
+
 
 /* =========================
    NAVBAR
@@ -21,22 +26,23 @@
     color: #ffffff !important;
 }
 
-/* Header */
+/* Header fijo */
 header {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 10;
+    z-index: 1000;
 }
 
+/* Navbar base */
 .navbar-custom {
     background-color: transparent;
-    transition: background-color 0.3s ease, height 0.3s ease;
     height: 100px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding: 15px 0;
+    transition: background-color 0.3s ease, height 0.3s ease, padding 0.3s ease;
 }
 
+/* Links */
 .navbar-custom .nav-link {
     color: #ffffff !important;
     font-weight: 600;
@@ -51,8 +57,7 @@ header {
 .navbar-custom.navbar-shrink {
     background-color: rgb(11, 11, 30);
     height: 80px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px 0;
 }
 
 /* Logo */
@@ -66,6 +71,62 @@ header {
 
 .navbar-custom.navbar-shrink .logo {
     max-height: 80px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    /* Navbar toma color SOLO al abrir menú */
+    .navbar-custom {
+        background-color: transparent;
+    }
+
+    .navbar-custom.menu-open {
+        background-color: var(--color-primary);
+    }
+
+    /* Menú colapsable */
+    .navbar-collapse {
+        background-color: var(--color-primary);
+        margin: 0;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.3s ease;
+        border: none;
+    }
+
+    /* Menú abierto */
+    .navbar-collapse.show {
+        max-height: 360px;
+        padding: 0 1.5rem 1rem 1.5rem;
+    }
+
+    /* Logo móvil */
+    .logo {
+        max-height: 60px !important;
+    }
+}
+
+/* =========================
+   BOTÓN HAMBURGUESA
+========================= */
+
+.navbar-toggler {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 /* =========================
@@ -243,27 +304,50 @@ header {
 
 
 /* =========================
-   PARALLAX TRADICIONAL (FIXED)
+   PARALLAX SERVICIOS (CORREGIDO)
 ========================= */
+
 .services-parallax {
     position: relative;
-    /* Imagen de fondo */
-    background-image: url("../Assets/img/montaje_claro.png");
+    width: 100%;
+    overflow: hidden;
 
-    /* Efecto Fixed */
+    /* Fondo */
+    background-image: url("../Assets/img/mesa.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    /* Parallax solo en desktop */
     background-attachment: fixed;
-
-
 }
 
-.services-overlay {
-    background: rgba(248, 243, 172, 0.164);
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
+/* Overlay oscuro para legibilidad */
+.services-parallax::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(11, 11, 30, 0.55);
+    z-index: 1;
 }
+
+/* Contenido por encima del overlay */
+.services-parallax>* {
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================
+   MOBILE FIX (OBLIGATORIO)
+========================= */
+
+@media (max-width: 768px) {
+    .services-parallax {
+        background-attachment: scroll;
+        background-position: center top;
+    }
+}
+
 
 /* =========================
    RESPONSIVE DE PARALLAX
@@ -282,6 +366,26 @@ header {
 /* =========================
    SECCIÓN SERVICIOS
 ========================= */
+
+/* =========================
+   TARJETA ENCABEZADO SERVICIOS
+========================= */
+
+.services-header-card {
+    background-color: #ffffff;
+    padding: 48px 40px;
+    border-radius: 28px;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.08);
+}
+
+/* Ajustes tipográficos internos */
+.services-header-card h2 {
+    color: var(--color-primary);
+}
+
+.services-header-card .section-text {
+    color: var(--color-secondary);
+}
 
 .services-section {
     position: relative;
@@ -370,19 +474,22 @@ header {
 ========================= */
 
 .services-section .btn {
-    padding: 14px 36px;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 15px 45px;
+    border: 2px solid var(--color-primary);
     border-radius: 50px;
-    font-weight: 500;
-    border: 1px solid var(--color-accent);
-    background-color: var(--color-accent);
-    color: var(--color-primary);
-    transition: background-color 0.25s ease, transform 0.2s ease;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .services-section .btn:hover {
-    background-color: #c9ad5f;
-    border-color: #c9ad5f;
-    transform: translateY(-2px);
+    background-color: transparent;
+    color: var(--color-primary);
+    transform: translateY(-3px);
 }
 
 /* =========================
@@ -393,6 +500,7 @@ header {
     padding: 100px 0;
     background-color: var(--color-background);
     overflow: hidden;
+    /* Bloquea overflow lateral */
 }
 
 .gallery-section .section-tag {
@@ -420,9 +528,11 @@ header {
 
 .gallery-wrapper {
     position: relative;
+    overflow-x: hidden;
+    /* CLAVE: evita desplazamiento lateral */
 }
 
-/* Fade lateral (más liviano que backdrop-filter) */
+/* Fade lateral */
 .gallery-swiper {
     overflow: hidden;
 
@@ -471,6 +581,28 @@ header {
 .gallery-item:hover img {
     transform: scale(1.06);
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================
+   RESPONSIVE GALERÍA
+========================= */
+
+@media (max-width: 768px) {
+
+    .gallery-section {
+        padding: 80px 0;
+    }
+
+    .gallery-swiper .swiper-slide {
+        width: 85vw;
+        /* Nunca supera el viewport */
+        max-width: 300px;
+        /* Control visual */
+    }
+
+    .gallery-item img {
+        height: 220px;
+    }
 }
 
 /* =========================
@@ -528,6 +660,109 @@ header {
     .gallery-item img {
         height: 220px;
     }
+}
+
+/* =========================
+   SECCION CONTACTO
+========================= */
+
+
+.contact-form-wrapper {
+    background-color: #ffffff;
+    padding: 60px;
+    border-radius: 30px;
+    /* Bordes suaves estilo moderno */
+    border-bottom: 5px solid var(--color-accent);
+    /* Detalle en dorado al final */
+}
+
+/* Reutilizando tus estilos de "Nosotros" para los encabezados */
+.contact-form-wrapper span.fw-semibold {
+    display: inline-block;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 8px;
+}
+
+.contact-form-wrapper h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--color-primary);
+}
+
+.contact-form-wrapper p {
+    color: var(--color-secondary);
+    max-width: 600px;
+}
+
+/* Estilización de los inputs */
+.custom-input {
+    border: 1px solid #e0e0e0;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.custom-input:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 0.25rem rgba(var(--color-accent-rgb), 0.1);
+    outline: none;
+}
+
+/* Botón personalizado basado en tu Hero */
+.btn-enviar-custom {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 15px 45px;
+    border: 2px solid var(--color-primary);
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-enviar-custom:hover {
+    background-color: transparent;
+    color: var(--color-primary);
+    transform: translateY(-3px);
+}
+
+/* Ajustes Responsive */
+@media (max-width: 768px) {
+    .contact-form-wrapper {
+        padding: 40px 20px;
+        border-radius: 20px;
+    }
+
+    .btn-enviar-custom {
+        width: 100%;
+        /* Botón ancho completo en móviles */
+    }
+}
+
+#formSuccess {
+    display: none;
+    margin: 20px auto 0 auto;
+    max-width: 320px;
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #D8B85F;
+    /* ajusta a tu paleta */
+}
+
+#formSuccess {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#formSuccess.show {
+    display: block;
+    opacity: 1;
 }
 
 /* =========================

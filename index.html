@@ -49,7 +49,7 @@
                         <li class="nav-item"><a class="nav-link" href="#nosotros">NOSOTROS</a></li>
                         <li class="nav-item"><a class="nav-link" href="#servicios">SERVICIOS</a></li>
                         <li class="nav-item"><a class="nav-link" href="#galeria">NOTICIAS</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">CONTACTO</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contacto">CONTACTO</a></li>
                     </ul>
                 </div>
 
@@ -134,15 +134,11 @@
                                 Conoce más de nuestro trabajo
                             </small>
 
-                            <div class="d-flex gap-3">
+                            <div>
                                 <a href="https://www.instagram.com/eventossalypimienta?utm_source=qr&igsh=MWtzM3F2YTloNmdhaw%3D%3D"
                                     class="social-link" target="_blank" rel="noopener noreferrer"
                                     aria-label="Instagram">
                                     <i class="bi bi-instagram"></i>
-                                </a>
-                                <a href="#" class="social-link" target="_blank" rel="noopener noreferrer"
-                                    aria-label="Facebook">
-                                    <i class="bi bi-facebook"></i>
                                 </a>
                                 <a href="https://wa.me/56958617010?text=Hola%20Sal%20y%20Pimienta,%20me%20gustaría%20cotizar%20un%20servicio%20para%20un%20evento."
                                     class="social-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
@@ -165,15 +161,19 @@
                 <section class="services-section">
                     <div class="container">
 
-                        <div class="text-center mb-5">
-                            <span class="section-tag fw-semibold">Nuestros servicios</span>
-                            <h2 class="fw-bold display-6 mt-2">
-                                Soluciones completas para tu evento
-                            </h2>
-                            <p class="section-text mt-3 mx-auto" style="max-width: 720px;">
-                                Diseñamos y ejecutamos eventos cuidando cada detalle, combinando producción,
-                                gastronomía y experiencia para lograr resultados memorables.
-                            </p>
+                        <div class="row justify-content-center mb-5">
+                            <div class="col-lg-8">
+                                <div class="services-header-card text-center">
+                                    <span class="section-tag fw-semibold">Nuestros servicios</span>
+                                    <h2 class="fw-bold display-6 mt-2">
+                                        Soluciones completas para tu evento
+                                    </h2>
+                                    <p class="section-text mt-3 mx-auto">
+                                        Diseñamos y ejecutamos eventos cuidando cada detalle, combinando producción,
+                                        gastronomía y experiencia para lograr resultados memorables.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
 
                         <!-- Servicios -->
@@ -281,15 +281,7 @@
                         <div class="swiper-wrapper">
 
                             <div class="swiper-slide gallery-item">
-                                <img src="Assets/img/fondo_vasos.png" alt="Evento Sal y Pimienta" loading="lazy">
-                            </div>
-
-                            <div class="swiper-slide gallery-item">
-                                <img src="Assets/img/montaje.png" alt="Evento Sal y Pimienta" loading="lazy">
-                            </div>
-
-                            <div class="swiper-slide gallery-item">
-                                <img src="Assets/img/montaje_claro.png" alt="Evento Sal y Pimienta" loading="lazy">
+                                <img src="Assets/img/evento_familiar.png" alt="Evento Sal y Pimienta" loading="lazy">
                             </div>
 
                             <div class="swiper-slide gallery-item">
@@ -297,11 +289,7 @@
                             </div>
 
                             <div class="swiper-slide gallery-item">
-                                <img src="Assets/img/montaje.png" alt="Evento Sal y Pimienta" loading="lazy">
-                            </div>
-
-                            <div class="swiper-slide gallery-item">
-                                <img src="Assets/img/montaje_claro.png" alt="Evento Sal y Pimienta" loading="lazy">
+                                <img src="Assets/img/matrimonio.png" alt="Evento Sal y Pimienta" loading="lazy">
                             </div>
 
                             <div class="swiper-slide gallery-item">
@@ -310,6 +298,18 @@
 
                             <div class="swiper-slide gallery-item">
                                 <img src="Assets/img/montaje_claro.png" alt="Evento Sal y Pimienta" loading="lazy">
+                            </div>
+
+                            <div class="swiper-slide gallery-item">
+                                <img src="Assets/img/montaje_postres.png" alt="Evento Sal y Pimienta" loading="lazy">
+                            </div>
+
+                            <div class="swiper-slide gallery-item">
+                                <img src="Assets/img/piscina.png" alt="Evento Sal y Pimienta" loading="lazy">
+                            </div>
+
+                            <div class="swiper-slide gallery-item">
+                                <img src="Assets/img/asado.png" alt="Evento Sal y Pimienta" loading="lazy">
                             </div>
 
                         </div>
@@ -318,6 +318,72 @@
                 </div>
             </div>
 
+        </section>
+
+        <section class="contacto-form-section py-5" id="contacto">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="contact-form-wrapper shadow-lg">
+
+                            <form id="contactForm" action="https://formspree.io/f/xreeggaw" method="POST">
+
+                                <div class="text-center mb-5">
+                                    <span class="fw-semibold">Contacto</span>
+                                    <h2 class="mb-3">Consulta Gratis</h2>
+                                    <p class="mx-auto">
+                                        Llena este formulario para que nos pongamos en contacto y diseñemos juntos tu
+                                        próximo evento.
+                                    </p>
+                                </div>
+
+                                <div class="row g-4">
+                                    <div class="col-md-6">
+
+                                        <div class="mb-3">
+                                            <input type="text" name="nombre" class="form-control custom-input"
+                                                placeholder="Nombre" required>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <input type="email" name="email" class="form-control custom-input"
+                                                placeholder="Email" required>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <input type="tel" name="telefono" class="form-control custom-input"
+                                                placeholder="Teléfono" required>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="h-100">
+                                            <textarea name="mensaje" class="form-control custom-input h-100"
+                                                placeholder="Servicio requerido (Asados, Eventos Corporativos, etc.)"
+                                                style="min-height: 160px;" required></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Asunto del correo -->
+                                <input type="hidden" name="_subject" value="Nuevo contacto desde la web">
+
+                                <div class="text-center mt-5">
+                                    <button type="submit" class="btn-enviar-custom">
+                                        Enviar Mensaje
+                                    </button>
+                                    <p id="formSuccess">
+                                        Mensaje enviado correctamente! Te contactaremos pronto.
+                                    </p>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
     </main>
@@ -339,9 +405,6 @@
                     <div class="col-lg-3 mb-4 mb-lg-0">
                         <h6 class="footer-title">Síguenos</h6>
                         <div class="d-flex gap-3 mt-3 justify-content-center justify-content-lg-start">
-                            <a href="#" class="social-icon" aria-label="Facebook">
-                                <i class="bi bi-facebook"></i>
-                            </a>
                             <a href="https://www.instagram.com/eventossalypimienta?utm_source=qr&igsh=MWtzM3F2YTloNmdhaw%3D%3D"
                                 target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
                                 <i class="bi bi-instagram"></i>
@@ -361,7 +424,7 @@
                             <li><a href="#nosotros">Nosotros</a></li>
                             <li><a href="#servicios">Servicios</a></li>
                             <li><a href="#galeria">Noticias</a></li>
-                            <li><a href="#">Contacto</a></li>
+                            <li><a href="#contacto">Contacto</a></li>
                         </ul>
                     </div>
 
@@ -377,7 +440,7 @@
                                     +56 9 5861 7010
                                 </a>
                             </li>
-                            <li><i class="bi bi-envelope"></i> gmail@gmail.com</li>
+                            <li><i class="bi bi-envelope"></i> eventossalypimienta@gmail.com</li>
                             <li><i class="bi bi-geo-alt"></i> Santiago, Chile</li>
                         </ul>
                     </div>
